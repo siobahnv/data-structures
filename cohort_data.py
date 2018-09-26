@@ -210,7 +210,29 @@ def find_name_duplicates(filename):
     duplicate_names = set()
 
     # Code goes here
+    winter_16 = set()
+    spring_16 = set()
+    summer_16 = set()
+    fall_15 = set()
 
+    my_file = open(filename).readlines()
+
+    for line in my_file:
+        my_line_split = line.strip().split("|")
+        my_cohort = my_line_split[4]
+        last_name = my_line_split[1]
+
+        if my_cohort == "Winter 2016":
+            winter_16.add(last_name)
+        elif my_cohort == "Spring 2016":
+            spring_16.add(last_name)
+        elif my_cohort == "Summer 2016":
+            summer_16.add(last_name)
+        elif my_cohort == "Fall 2015":
+            fall_15.add(last_name)
+
+    duplicate_names = winter_16 & spring_16 & summer_16 & fall_15
+        
     return duplicate_names
 
 
