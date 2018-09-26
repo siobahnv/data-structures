@@ -153,7 +153,16 @@ def all_students_tuple_list(filename):
     student_list = []
 
     # Code goes here
+    my_file = open(filename).readlines()
 
+    for line in my_file:
+        my_line_split = line.strip().split("|")
+        my_cohort = my_line_split[4]
+        my_student_tuple = my_line_split[0] + " " + my_line_split[1], my_line_split[2], my_line_split[3], my_line_split[4]
+        
+        if my_cohort != "G" and my_cohort != "I":
+            student_list.append(my_student_tuple)
+            
     return student_list
 
 
