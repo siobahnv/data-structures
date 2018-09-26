@@ -248,7 +248,7 @@ def find_name_duplicates(filename):
 
 
 def find_house_members_by_student_name(student_list):
-    """TODO: Prompt user for a student. Display everyone in their house and cohort.
+    """Prompt user for a student. Display everyone in their house and cohort.
 
      Prompt the user for the name via the command line and when given a name,
      print a statement of everyone in their house in their cohort.
@@ -274,6 +274,24 @@ def find_house_members_by_student_name(student_list):
      """
 
     # Code goes here
+    all_students_data = all_students_tuple_list("cohort_data.txt")
+
+    student_name = input("Choose a student: ")
+
+    for student in all_students_data:
+        # do something
+        if student_name == student[0]:
+            print(student_name + " was in the house " + str(student[1]) + " in the " + str(student[3]) + " cohort.")
+            
+            print("The following students are also in their house and cohort:")
+            for other_student in all_students_data:
+                # do smething
+                if student_name != other_student[0] and student[1] == other_student[1] and student[3] == other_student[3]:
+                    print(other_student[0])
+            
+            return
+        
+    print("Student not found.")
 
     return
 
@@ -283,7 +301,7 @@ def find_house_members_by_student_name(student_list):
 all_students_data = "Hermione Granger"
 # find_cohort_by_student_name(all_students_data)
 find_cohort_by_student_name(all_students_data)
-# find_house_members_by_student_name(all_students_data)
+find_house_members_by_student_name(all_students_data)
 
 
 ##############################################################################
