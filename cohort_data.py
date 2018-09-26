@@ -17,6 +17,13 @@ def unique_houses(filename):
     houses = set()
 
     # Code goes here
+    my_file = open(filename).readlines()
+
+    for line in my_file:
+        my_line_split = line.strip().split("|")
+        my_house = my_line_split[2]
+        if my_house != "":
+            houses.add(my_house)
 
     return houses
 
@@ -43,6 +50,30 @@ def sort_by_cohort(filename):
     ghosts = []
 
     # Code goes here
+    my_file = open(filename).readlines()
+
+    for line in my_file:
+        my_line_split = line.strip().split("|")
+        my_cohort = my_line_split[4]
+        my_name = my_line_split[0] + " " + my_line_split[1]
+        
+        if my_cohort == "Winter 2016":
+            winter_16.append(my_name)
+        elif my_cohort == "Spring 2016":
+            spring_16.append(my_name)
+        elif my_cohort == "Summer 2016":
+            summer_16.append(my_name)
+        elif my_cohort == "Fall 2015":
+            fall_15.append(my_name)
+        elif my_cohort == "G":
+            ghosts.append(my_name)
+    
+    # expects cohorts in a certain order...
+    all_students.append(fall_15)
+    all_students.append(winter_16)
+    all_students.append(spring_16)
+    all_students.append(summer_16)
+    all_students.append(ghosts)
 
     return all_students
 
