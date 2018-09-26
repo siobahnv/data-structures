@@ -2,7 +2,7 @@
 
 
 def unique_houses(filename):
-    """TODO: Return a set of student houses.
+    """Return a set of student houses.
 
     Iterate over the cohort_data.txt file to look for all of the included house names
     and create a set called "houses" that holds those names.
@@ -29,7 +29,7 @@ def unique_houses(filename):
 
 
 def sort_by_cohort(filename):
-    """TODO: Return a list of all cohort lists, including ghosts but not instructors.
+    """Return a list of all cohort lists, including ghosts but not instructors.
 
     Sort students by cohort, skipping instructors.
 
@@ -79,7 +79,7 @@ def sort_by_cohort(filename):
 
 
 def hogwarts_by_house(filename):
-    """TODO: Sort students into lists by house and return all lists in one list.
+    """Sort students into lists by house and return all lists in one list.
 
     Iterate over the data to create an alphabeticaly sorted list for each
     house, and sorts students into their appropriate houses by last name. Sorts
@@ -138,7 +138,7 @@ def hogwarts_by_house(filename):
 
 
 def all_students_tuple_list(filename):
-    """TODO: Return a list of tuples of student data.
+    """Return a list of tuples of student data.
 
     Iterate over the data to create a big list of tuples that individually
     hold all the data for each person. (full_name, house, advisor, cohort)
@@ -196,7 +196,7 @@ def find_cohort_by_student_name(student_list):
 
 
 def find_name_duplicates(filename):
-    """TODO: Return a set of student last names that have duplicates.
+    """Return a set of student last names that have duplicates.
 
     Iterate over the data to find any last names that exist across all cohorts.
     Use set operations (set math) to create and return a set of these names.
